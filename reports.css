@@ -38,38 +38,29 @@ justify-content: space-between;
 align-items: center; 
 } 
 
-/* Update the background color of dashboard boxes */
-.box:nth-child(1),
-.box:nth-child(3),
-.box:nth-child(5) {
-    background-color: transparent; /* Set the background color to transparent */
-}
-.logosec { 
-  gap: 20px;
-  display: flex;
-  align-items: center;
-} 
-
-.logo { 
-  font-size: 27px; 
-  font-weight: 600; 
-  color: #bb877a; 
-} 
-
-.dashboard-link {
-  color: rgb(230, 127, 127);
-  text-decoration: none;
-  text-align: center;
-  font-size: 40px;
-}
-
-
-
 .logo { 
 font-size: 27px; 
 font-weight: 600; 
 color: #bb877a; 
 } 
+.logosec { 
+    gap: 20px;
+    display: flex;
+    align-items: center;
+  } 
+  
+  .logo { 
+    font-size: 27px; 
+    font-weight: 600; 
+    color: #bb877a; 
+  } 
+  
+  .dashboard-link {
+    color: rgb(230, 127, 127);
+    text-decoration: none;
+    text-align: center;
+    font-size: 40px;
+  }
 .icn { 
 height: 30px; 
 } 
@@ -148,67 +139,6 @@ z-index: 1;
 .dpicn { 
 height: 42px; 
 } 
-.notification-icon {
-    position: relative;
-    cursor: pointer;
-}
-
-.notification-dropdown {
-    position: absolute;
-    top: 40px; /* Adjust distance from the icon */
-    right: 0;
-    width: 300px; /* Adjust dropdown width */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    display: none; /* Hide dropdown by default */
-}
-
-.notification-icon:hover .notification-dropdown {
-    display: block; /* Display dropdown on hover */
-}
-
-.notification-item {
-    padding: 8px;
-    border-bottom: 1px solid #eee;
-}
-
-.notification-item:last-child {
-    border-bottom: none; /* Remove border on last item */
-}
-
-.badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #f44336; /* Badge background color */
-    color: #fff;
-    padding: 4px 8px;
-    border-radius: 50%;
-    font-size: 12px;
-}
-
-.logout-btn {
-    position: absolute;
-    top: calc(100% + 5px); /* Position below the profile icon */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ff6347; /* Red color for logout button */
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    font-size: 14px;
-    cursor: pointer;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease;
-}
-
-.dp:hover .logout-btn {
-    opacity: 1; /* Show logout button on hover */
-}
 
 .main { 
 height: calc(100vh - 70px); 
@@ -289,6 +219,15 @@ align-items: center;
 gap: 30px; 
 } 
 
+.option1 { 
+border-left: 5px solid #e2e2efaf; 
+background-color: var(--Border-color);  
+cursor: pointer; 
+} 
+.option1:hover { 
+border-left: 5px solid #010058af; 
+background-color: var(--Border-color); 
+} 
 .nav-option.option1 {
     /* Remove the gray background color */
     background-color: transparent;
@@ -300,41 +239,9 @@ gap: 30px;
     background-color: #dfc0c0; 
     border-left: 5px solid #f4b6b6; 
 }
-
-.nav-option.option1 { 
+.nav-option.option5 { 
 background-color: #fedcdc; 
 } 
-
-.option1:hover { 
-border-left: 5px solid #010058af; 
-background-color: var(--Border-color); 
-} 
-
-.notification-indicator {
-    height: 12px;
-    width: 12px;
-    background-color: #ff6347; /* Red color for notifications */
-    border-radius: 50%;
-    margin-left: 10px; /* Adjust spacing from the navigation text */
-    display: inline-block;
-    visibility: hidden; /* Initially hidden */
-}
-
-
-.graph-container {
-  width: 100%; /* Match the width of the parent container */
-  height: calc(100vh - 70px); /* Match the height minus the header height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 30px; /* Match the border-radius of the report container */
-  box-shadow: 3px 3px 10px rgb(188, 188, 188); /* Match the box-shadow of the report container */
-  margin-top: 70px; /* Adjust margin to position below the header */
-  overflow: hidden; /* Ensure content doesn't overflow */
-}
-
 a{
 	display: flex;
 	align-items: center;
@@ -391,7 +298,7 @@ letter-spacing: 3px;
 } 
 
 .report-container { 
-min-height: 100vh; 
+min-height: 300px; 
 max-width: 1200px; 
 margin: 70px auto 0px auto; 
 background-color: #ffffff; 
@@ -425,100 +332,63 @@ font-size: 15px;
 border: none; 
 cursor: pointer; 
 } 
+/* Reports CSS */
 
-.avatar {
-    width: 40px; /* Adjust size as needed */
-    height: 40px; /* Adjust size as needed */
-    border-radius: 50%; /* Ensures a circular shape */
-    overflow: hidden; /* Clips the image to the border radius */
-    margin-right: 10px; /* Add spacing between avatar and name */
-    flex-shrink: 0; /* Prevent avatar from shrinking */
+.report-container {
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 3px 3px 10px rgba(188, 188, 188, 0.5);
+    border-radius: 30px;
+    overflow: hidden;
 }
 
-.user-info {
-  display: flex;
-  align-items: center;
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid rgba(252, 162, 162, 0.5);
 }
 
-.avatar {
-  font-size: 24px;
-  margin-right: 8px;
+.recent-Articles {
+    font-size: 24px;
+    font-weight: 600;
+    color: #f48686;
 }
 
-.username {
-  font-size: 16px;
+.view {
+    height: 35px;
+    width: 120px;
+    border-radius: 8px;
+    background-color: #f48686;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
-
-
 
 .report-body {
-	max-width: 1160px;
-	overflow-x: auto;
-	padding: 20px;
-  }
-  
-  table {
-	width: 100%;
-	border-collapse: collapse;
-  }
-  
-  table,
-  th,
-  td {
-	border: 1px solid #ddd;
-  }
-  
-  th,
-  td {
-	padding: 12px;
-	text-align: left;
-  }
-  
-  th {
-	background-color: #f3f3f3;
-	color: #000;
-  }
-  
-  tr:nth-child(even) {
-	background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-	background-color: #f1f1f1;
-  }
-  
-  .user-info {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-  }
-  
-  .avatar {
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	overflow: hidden;
-  }
-  
-  .avatar img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-  }
-  
-.label-tag {
-	width: 100px; 
-	text-align: center; 
-	background-color: rgb(0, 177, 0); 
-	color: rgb(255, 255, 255); 
-	border-radius: 4px; 
-	}
+    padding: 20px;
+}
 
-.label-tag2 {
-	width: 100px; 
-	text-align: center; 
-	background-color: rgb(252, 6, 6); 
-	color: rgb(255, 255, 255); 
-	border-radius: 4px; 
-	}
-	
+.t-op {
+    font-size: 18px;
+    font-weight: 600;
+    color: #bb877a;
+    margin-bottom: 10px;
+}
+
+.item {
+    margin-bottom: 20px;
+}
+
+.item p, .item ul {
+    color: #060606;
+    font-size: 16px;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
